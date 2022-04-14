@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AnyForUntypedForms } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,10 @@ export class ProductsService {
 
   unstock(id:any, available:any) {
     return this.http.patch("http://localhost:3000/product/"+id, {available: false});
+  }
+
+  priceFilter(min:any, max:any) {
+    return this.http.get("http://localhost:3000/product?price_gte=" + min + "&price_lte=" + max);
   }
 
 }

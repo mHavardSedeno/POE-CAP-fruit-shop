@@ -8,15 +8,21 @@
             <h6 class="text-info text-center">Filtrer par prix</h6>
 
             <!-- begin price range form  -->
-            <form>
+            <form (ngSubmit)="priceFilter(priceSearch)" #priceSearch="ngForm">
                 <div class="row">
-                    <div class="col-4"><p class="form-group">
-                        <input type="number" class="form-control" placeholder="Max">
-                      </p></div>
-                    <div class="col-4"><p class="form-group">
-                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Min">
-                      </p></div>
-                    <div class="col-4"><button type="submit" class="btn btn-primary">Appliquer</button></div>
+                    <div class="col-4">
+                        <p class="form-group">
+                            <input type="number" class="form-control" name="minPrice" placeholder="Min" ngModel>
+                        </p>
+                    </div>
+                    <div class="col-4">
+                        <p class="form-group">
+                            <input type="number" class="form-control" name="maxPrice" placeholder="Max" ngModel>
+                        </p>
+                    </div>
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary">Appliquer</button>
+                    </div>
                 </div>            
               </form>
               <!-- end price range form  -->

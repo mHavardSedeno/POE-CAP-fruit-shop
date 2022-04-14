@@ -12,6 +12,8 @@ export class ProductsComponent implements OnInit {
   firstProducts: any;
   pages = [1,2,3];
   show: boolean = false;
+  minPrice: any;
+  maxPrice: any;
 
   constructor(private ps: ProductsService) { }
 
@@ -44,6 +46,23 @@ export class ProductsComponent implements OnInit {
   unstock(id:any, available:any){
     this.ps.unstock(id, available).subscribe(data => {
       this.getProducts();
+    });
+  }
+
+  setMinPrice(min:any) {
+    this.minPrice = min;
+  }
+
+  setMaxPrice(max:any) {
+    this.maxPrice = max;
+  }
+
+  priceFilter(prices:any) {
+    let minPrice = prices.value.minPrice;
+    let maxPrice = prices.value.maxPrice;
+
+    this.ps.priceFilter(minPrice, maxPrice).subscribe(data => {
+      this.products = data;
     });
   }
 
