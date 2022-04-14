@@ -66,4 +66,10 @@ export class ProductsComponent implements OnInit {
     });
   }
 
+  keywordFilter(keyword:any){
+    this.ps.keywordFilter(keyword.value.keyword).subscribe(data => {
+      this.products = data;
+    });
+  }
+
 }

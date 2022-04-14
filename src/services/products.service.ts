@@ -33,4 +33,7 @@ export class ProductsService {
     return this.http.get("http://localhost:3000/product?price_gte=" + min + "&price_lte=" + max);
   }
 
+  keywordFilter(keyword:any) {
+    return this.http.get("http://localhost:3000/product?q=" + keyword);
+  }
 }
