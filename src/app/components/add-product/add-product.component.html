@@ -1,0 +1,27 @@
+<div class="container">
+    <h1 class="text-center text-info mt-4 mb-4">Ajouter un produit</h1>
+
+
+<form (ngSubmit)="saveProduct(productForm)" #productForm="ngForm">
+    <div class="form-group m-4">
+     <!--  <label>Nom du produit</label> -->
+      <input type="text" class="form-control" name="title" placeholder="Nom du produit" ngModel required>
+    </div>
+
+    <div class="form-group m-4">
+      <!-- <label>Password</label> -->
+      <input type="text" class="form-control" name="description" placeholder="Description" ngModel required>
+    </div>
+
+    <div class="form-group m-4">
+        <input type="text" class="form-control" name="image" placeholder="Image" ngModel required>
+    </div>
+
+    <div class="form-group m-4">
+        <input type="number" class="form-control" name="price" placeholder="Prix" ngModel required>
+    </div>
+
+    <button type="submit" class="btn btn-primary m-4">Ajouter le produit</button>
+  </form>
+
+</div>
