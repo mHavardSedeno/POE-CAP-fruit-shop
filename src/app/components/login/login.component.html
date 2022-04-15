@@ -1,0 +1,19 @@
+<div class="container">
+    <h1 class="text-center text-info mt-4 mb-4">Connexion :</h1>
+
+
+<form (ngSubmit)="login(loginForm)" #loginForm="ngForm">
+    <div class="form-group m-4">
+     <!--  <label>Nom du produit</label> -->
+      <input type="text" class="form-control" name="username" placeholder="username" ngModel required>
+    </div>
+
+    <div class="form-group m-4">
+      <!-- <label>Password</label> -->
+      <input type="password" class="form-control" name="password" placeholder="password" ngModel required>
+    </div>
+
+    <button type="submit" class="btn btn-primary m-4">Se connecter</button>
+  </form>
+
+</div>

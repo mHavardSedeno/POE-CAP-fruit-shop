@@ -36,4 +36,14 @@ export class ProductsService {
   keywordFilter(keyword:any) {
     return this.http.get("http://localhost:3000/product?q=" + keyword);
   }
+
+  /* patch pour modifier un seul attribut */
+  /* put pour tout modifier (même si les deux fonctionnent là) */
+  updateProduct(modifiedProd:any) {
+    return this.http.put("http://localhost:3000/product/" + modifiedProd.id, modifiedProd);
+  }
+
+
+
+
 }

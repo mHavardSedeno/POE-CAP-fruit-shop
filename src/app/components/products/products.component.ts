@@ -15,6 +15,14 @@ export class ProductsComponent implements OnInit {
   minPrice: any;
   maxPrice: any;
 
+  newProd = {
+      title: "",
+      description: "",
+      image: "",
+      price: 0,
+      available: false
+  };
+
   constructor(private ps: ProductsService) { }
 
   ngOnInit(): void {
@@ -25,15 +33,15 @@ export class ProductsComponent implements OnInit {
   getProducts() {
     this.ps.getProducts().subscribe(data => {
       this.products = data;
-      console.log(this.products);
+      /* console.log(this.products); */
     });
   }
 
   getProductsLimited(page:any) {
     this.ps.getProductsLimited(page).subscribe(data => {
       this.firstProducts = data;
-      console.log(this.firstProducts);
-    });
+/*       console.log(this.firstProducts); */    
+  });
   }
 
   supprimer(id:any) {
@@ -70,6 +78,16 @@ export class ProductsComponent implements OnInit {
     this.ps.keywordFilter(keyword.value.keyword).subscribe(data => {
       this.products = data;
     });
+  }
+
+  editProduct(formData:any) {
+    this.newProd = formData;
+    /* console.log(this.newProd);*/
+  }
+
+  updateProduct(modifiedProd:any) {
+    /* console.log(modifiedProd); */
+    this.ps.updateProduct(modifiedProd).subscribe(() => {});
   }
 
 }
