@@ -7,6 +7,8 @@ import { AnyForUntypedForms } from '@angular/forms';
 })
 export class ProductsService {
 
+  isAdmin = false;
+
   constructor(private http:HttpClient) { }
 
   getProducts() {

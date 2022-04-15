@@ -25,9 +25,13 @@ export class ProductsComponent implements OnInit {
 
   constructor(private ps: ProductsService) { }
 
+  isAuth = false;
+
   ngOnInit(): void {
     this.getProducts();
     this.getProductsLimited(1);
+    
+    this.isAuth = this.ps.isAdmin;
   }
 
   getProducts() {
